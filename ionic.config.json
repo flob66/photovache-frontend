@@ -1,0 +1,7 @@
+{
+  "name": "photovache",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
