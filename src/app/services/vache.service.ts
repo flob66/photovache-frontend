@@ -25,4 +25,8 @@ export class VacheService {
   update(id: number, vache: any) {
     return axios.put(`${API_URL}/${id}`, vache);
   }
+
+  delete(id: number) {
+    return axios.delete(`${API_URL}/${id}`);
+  }
 }

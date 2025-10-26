@@ -15,6 +15,30 @@
     <ion-input [(ngModel)]="vache.nom"></ion-input>
   </ion-item>
 
+  <ion-card *ngIf="vache.photo_avant">
+    <img [src]="vache.photo_avant" alt="Avant">
+    <ion-card-title>Avant</ion-card-title>
+    <ion-button color="danger" (click)="removePhoto('photo_avant')">Supprimer</ion-button>
+  </ion-card>
+
+  <ion-card *ngIf="vache.photo_arriere">
+    <img [src]="vache.photo_arriere" alt="Arrière">
+    <ion-card-title>Arrière</ion-card-title>
+    <ion-button color="danger" (click)="removePhoto('photo_arriere')">Supprimer</ion-button>
+  </ion-card>
+
+  <ion-card *ngIf="vache.photo_cote_gauche">
+    <img [src]="vache.photo_cote_gauche" alt="Côté gauche">
+    <ion-card-title>Côté gauche</ion-card-title>
+    <ion-button color="danger" (click)="removePhoto('photo_cote_gauche')">Supprimer</ion-button>
+  </ion-card>
+
+  <ion-card *ngIf="vache.photo_cote_droit">
+    <img [src]="vache.photo_cote_droit" alt="Côté droit">
+    <ion-card-title>Côté droit</ion-card-title>
+    <ion-button color="danger" (click)="removePhoto('photo_cote_droit')">Supprimer</ion-button>
+  </ion-card>
+
   <ion-button (click)="takePhoto('photo_avant')">Prendre photo avant</ion-button>
   <ion-button (click)="takePhoto('photo_arriere')">Prendre photo arrière</ion-button>
   <ion-button (click)="takePhoto('photo_cote_gauche')">Prendre photo côté gauche</ion-button>
@@ -22,3 +46,21 @@
 
   <ion-button expand="full" (click)="save()">Enregistrer Vache</ion-button>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()">
+        Home
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="goToAddVache()">
+        Ajouter
+      </ion-button>
+      <ion-button (click)="goToListe()">
+        Liste
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

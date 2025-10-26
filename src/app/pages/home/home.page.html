@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Photothèque Vaches</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card button routerLink="/edit-vache">
+    <ion-card-header>
+      <ion-card-title>Ajouter une vache</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card button routerLink="/liste-vaches">
+    <ion-card-header>
+      <ion-card-title>Liste des vaches</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()">
+        Home
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="goToAddVache()">
+        Ajouter
+      </ion-button>
+      <ion-button (click)="goToListe()">
+        Liste
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -4,10 +4,33 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-list>
-    <ion-item *ngFor="let v of vaches">
-      {{v.numero}} - {{v.nom}}
+    <ion-item *ngFor="let v of vaches" (click)="goToDetails(v)">
+      <ion-label>
+        <h2>{{v.numero}}</h2>
+        <p>{{v.nom}}</p>
+      </ion-label>
+      <ion-button fill="outline" color="primary" slot="end" (click)="editVache(v, $event)">Modifier</ion-button>
+      <ion-button fill="outline" color="danger" slot="end" (click)="deleteVache(v.id, $event)">Supprimer</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()">
+        Home
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="goToAddVache()">
+        Ajouter
+      </ion-button>
+      <ion-button (click)="goToListe()">
+        Liste
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

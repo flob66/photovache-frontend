@@ -1,13 +1,47 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>vache-details</ion-title>
+    <ion-title>Détails Vache</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">vache-details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" *ngIf="vache">
+  <h2>{{vache.numero}} - {{vache.nom}}</h2>
+
+  <ion-card *ngIf="vache.photo_avant">
+    <img [src]="vache.photo_avant" alt="Avant">
+    <ion-card-title>Avant</ion-card-title>
+  </ion-card>
+
+  <ion-card *ngIf="vache.photo_arriere">
+    <img [src]="vache.photo_arriere" alt="Arrière">
+    <ion-card-title>Arrière</ion-card-title>
+  </ion-card>
+
+  <ion-card *ngIf="vache.photo_cote_gauche">
+    <img [src]="vache.photo_cote_gauche" alt="Côté gauche">
+    <ion-card-title>Côté gauche</ion-card-title>
+  </ion-card>
+
+  <ion-card *ngIf="vache.photo_cote_droit">
+    <img [src]="vache.photo_cote_droit" alt="Côté droit">
+    <ion-card-title>Côté droit</ion-card-title>
+  </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()">
+        Home
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="goToAddVache()">
+        Ajouter
+      </ion-button>
+      <ion-button (click)="goToListe()">
+        Liste
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
