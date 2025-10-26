@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/vaches'; 
+const API_URL = 'https://photovache-backend.onrender.com/vaches';
 
 @Injectable({
   providedIn: 'root'
