@@ -3,3 +3,82 @@ ion-card {
   --background: #f0f0f0;
   text-align: center;
 }
+
+.title-center {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.home-content {
+  --background: linear-gradient(to bottom right, #e7f9e5, #fdfdfd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.hero-section {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.hero-bg {
+  width: 120px;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.hero-section h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.hero-section p {
+  color: #558b2f;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+.action-card {
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-align: center;
+}
+
+.action-card ion-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+.add-card {
+  background: linear-gradient(135deg, #a5d6a7, #81c784);
+  color: white;
+}
+
+.list-card {
+  background: linear-gradient(135deg, #c5e1a5, #aed581);
+  color: white;
+}
+
+ion-footer {
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.08);
+}
+
+ion-footer ion-button {
+  font-weight: 600;
+}

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   imports: [IonApp, IonRouterOutlet, RouterModule],
+  standalone: true,
 })
 export class AppComponent {
   constructor() {}
