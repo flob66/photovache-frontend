@@ -67,7 +67,11 @@ export class ListeVachesPage {
   }
 
   goToDetails(vache: any) {
-    this.router.navigate(['/vache-details'], { state: { vache } });
+    this.router.navigate(['/vache-details'], {
+      queryParams: {
+        data: encodeURIComponent(JSON.stringify(vache))
+      }
+    });
   }
 
   editVache(vache: any, event: Event) {

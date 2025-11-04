@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-edit-vache',
   templateUrl: './edit-vache.page.html',
+  styleUrls: ['./edit-vache.page.scss'],
   imports: [IonicModule, FormsModule, CommonModule]
 })
 export class EditVachePage {
@@ -63,15 +64,14 @@ export class EditVachePage {
       return;
     }
 
-    const dataToSend: any = {
+    const dataToSend = {
       numero: this.vache.numero,
       nom: this.vache.nom || null,
+      photo_avant: this.vache.photo_avant,      
+      photo_arriere: this.vache.photo_arriere,
+      photo_cote_gauche: this.vache.photo_cote_gauche,
+      photo_cote_droit: this.vache.photo_cote_droit
     };
-
-    if (this.vache.photo_avant) dataToSend.photo_avant = this.vache.photo_avant;
-    if (this.vache.photo_arriere) dataToSend.photo_arriere = this.vache.photo_arriere;
-    if (this.vache.photo_cote_gauche) dataToSend.photo_cote_gauche = this.vache.photo_cote_gauche;
-    if (this.vache.photo_cote_droit) dataToSend.photo_cote_droit = this.vache.photo_cote_droit;
 
     try {
       if(this.vache.id){ 

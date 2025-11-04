@@ -7,44 +7,54 @@
 <ion-content>
   <ion-item>
     <ion-label position="floating">Numéro *</ion-label>
-    <ion-input [(ngModel)]="vache.numero"></ion-input>
+    <ion-input [(ngModel)]="vache.numero" placeholder="Entrez le numéro"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Nom</ion-label>
-    <ion-input [(ngModel)]="vache.nom"></ion-input>
+    <ion-input [(ngModel)]="vache.nom" placeholder="Entrez le nom"></ion-input>
   </ion-item>
 
-  <ion-card *ngIf="vache.photo_avant">
-    <img [src]="vache.photo_avant" alt="Avant">
-    <ion-card-title>Avant</ion-card-title>
-    <ion-button color="danger" (click)="removePhoto('photo_avant')">Supprimer</ion-button>
-  </ion-card>
+  <div class="pictures-container">
+    <span>
+      <ion-button (click)="takePhoto('photo_avant')">Avant</ion-button>
+      <ion-card *ngIf="vache.photo_avant">
+        <img [src]="vache.photo_avant" alt="Avant">
+        <ion-card-title>Avant</ion-card-title>
+        <ion-button color="danger" (click)="removePhoto('photo_avant')">Supprimer</ion-button>
+      </ion-card>
+    </span>
+    
+    <span>
+      <ion-button (click)="takePhoto('photo_arriere')">Arrière</ion-button>
+      <ion-card *ngIf="vache.photo_arriere">
+        <img [src]="vache.photo_arriere" alt="Arrière">
+        <ion-card-title>Arrière</ion-card-title>
+        <ion-button color="danger" (click)="removePhoto('photo_arriere')">Supprimer</ion-button>
+      </ion-card>
+    </span>
 
-  <ion-card *ngIf="vache.photo_arriere">
-    <img [src]="vache.photo_arriere" alt="Arrière">
-    <ion-card-title>Arrière</ion-card-title>
-    <ion-button color="danger" (click)="removePhoto('photo_arriere')">Supprimer</ion-button>
-  </ion-card>
+    <span>
+      <ion-button (click)="takePhoto('photo_cote_gauche')">Côté gauche</ion-button>
+      <ion-card *ngIf="vache.photo_cote_gauche">
+        <img [src]="vache.photo_cote_gauche" alt="Côté gauche">
+        <ion-card-title>Côté gauche</ion-card-title>
+        <ion-button color="danger" (click)="removePhoto('photo_cote_gauche')">Supprimer</ion-button>
+      </ion-card>
+    </span>
+    
+    <span>
+      <ion-button (click)="takePhoto('photo_cote_droit')">Côté droit</ion-button>
+      <ion-card *ngIf="vache.photo_cote_droit">
+        <img [src]="vache.photo_cote_droit" alt="Côté droit">
+        <ion-card-title>Côté droit</ion-card-title>
+        <ion-button color="danger" (click)="removePhoto('photo_cote_droit')">Supprimer</ion-button>
+      </ion-card>
+    </span>
+    
+  </div>
 
-  <ion-card *ngIf="vache.photo_cote_gauche">
-    <img [src]="vache.photo_cote_gauche" alt="Côté gauche">
-    <ion-card-title>Côté gauche</ion-card-title>
-    <ion-button color="danger" (click)="removePhoto('photo_cote_gauche')">Supprimer</ion-button>
-  </ion-card>
-
-  <ion-card *ngIf="vache.photo_cote_droit">
-    <img [src]="vache.photo_cote_droit" alt="Côté droit">
-    <ion-card-title>Côté droit</ion-card-title>
-    <ion-button color="danger" (click)="removePhoto('photo_cote_droit')">Supprimer</ion-button>
-  </ion-card>
-
-  <ion-button (click)="takePhoto('photo_avant')">Prendre photo avant</ion-button>
-  <ion-button (click)="takePhoto('photo_arriere')">Prendre photo arrière</ion-button>
-  <ion-button (click)="takePhoto('photo_cote_gauche')">Prendre photo côté gauche</ion-button>
-  <ion-button (click)="takePhoto('photo_cote_droit')">Prendre photo côté droit</ion-button>
-
-  <ion-button expand="full" (click)="save()">Enregistrer Vache</ion-button>
+  <ion-button expand="full" class="save-btn" (click)="save()">Enregistrer Vache</ion-button>
 </ion-content>
 
 <ion-footer>

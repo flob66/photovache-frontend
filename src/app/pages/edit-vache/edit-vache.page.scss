@@ -1,0 +1,135 @@
+.pictures-container{
+    display: flex;
+    justify-content: center;
+    gap: 2.5%;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.pictures-container span{
+    width: 47.5%;
+    margin: 0;
+}
+
+.pictures-container ion-button{
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+ion-card{
+    text-align: center;
+}
+
+ion-header {
+  ion-toolbar {
+    --background: linear-gradient(135deg, #a5d6a7, #81c784);
+    --color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+ion-content {
+  --background: linear-gradient(to bottom right, #e8f5e9, #fdfdfd);
+  padding: 1rem;
+}
+
+ion-item {
+  --background: white;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+ion-label {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+ion-input {
+  color: #388e3c;
+  font-size: 1rem;
+}
+
+.pictures-container {
+  gap: 1rem;
+}
+
+.pictures-container span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pictures-container ion-button {
+  --background: #81c784;
+  --color: white;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.pictures-container ion-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 100%;
+  max-width: 180px;
+  transition: transform 0.2s ease;
+}
+
+.pictures-container ion-card:hover {
+  transform: scale(1.03);
+}
+
+.pictures-container img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.pictures-container ion-card-title {
+  color: #2e7d32;
+  font-size: 1rem;
+  margin: 0.4rem 0;
+  font-weight: bold;
+}
+
+.pictures-container ion-button[color="danger"] {
+  --background: #e57373;
+  --color: white;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.save-btn {
+  margin-top: 2rem;
+  --background: linear-gradient(135deg, #66bb6a, #43a047);
+  --color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s ease;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.save-btn:hover {
+  transform: translateY(-3px);
+}
+
+ion-footer {
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.08);
+  background: #f1f8e9;
+}
+
+ion-footer ion-button {
+  font-weight: 600;
+  color: #2e7d32;
+}

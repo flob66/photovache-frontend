@@ -1,0 +1,119 @@
+ion-header {
+  ion-toolbar:first-child {
+    --background: linear-gradient(135deg, #a5d6a7, #81c784);
+    --color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  }
+
+  ion-toolbar:nth-child(2) {
+    --background: #f1f8e9;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  ion-searchbar {
+    --background: #ffffff;
+    --color: #2e7d32;
+    --placeholder-color: #66bb6a;
+    --icon-color: #66bb6a;
+    border-radius: 10px;
+    margin: 0.5rem;
+    flex: 1;
+  }
+
+  ion-button img {
+    filter: invert(40%) sepia(70%) saturate(500%) hue-rotate(90deg);
+    transition: transform 0.2s ease;
+  }
+
+  ion-button:hover img {
+    transform: scale(1.1);
+  }
+}
+
+ion-content {
+  --background: linear-gradient(to bottom right, #f1f8e9, #ffffff);
+  padding: 1rem;
+}
+
+ion-list {
+  background: transparent;
+}
+
+ion-item {
+  --background: white;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+ion-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+ion-label h2 {
+  color: #2e7d32;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+ion-label p {
+  color: #558b2f;
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+ion-button[color="primary"] {
+  --border-color: #81c784;
+  --color: #388e3c;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+ion-button[color="danger"] {
+  --border-color: #ef9a9a;
+  --color: #c62828;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+ion-toolbar:nth-child(2) ion-button {
+  --background: transparent;
+  --box-shadow: none;
+  margin-right: 0.6rem;
+}
+
+ion-item ion-label {
+  text-align: center;
+  width: 100%;
+  color: #9e9e9e;
+  font-style: italic;
+}
+
+ion-footer {
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.08);
+  background: #f1f8e9;
+}
+
+ion-footer ion-toolbar {
+  display: flex;
+  justify-content: space-between;
+  --background: #f1f8e9;
+}
+
+ion-footer ion-button {
+  font-weight: 600;
+  color: #2e7d32;
+  transition: color 0.2s ease;
+}
+
+ion-footer ion-button:hover {
+  color: #43a047;
+}
