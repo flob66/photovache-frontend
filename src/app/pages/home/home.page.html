@@ -34,22 +34,13 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="light">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button color="medium" (click)="goToHome()">
-        <ion-icon name="home-outline" slot="start"></ion-icon>
-        Home
-      </ion-button>
+      <ion-button (click)="goToHome()">Home</ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button color="success" (click)="goToAddVache()">
-        <ion-icon name="add-outline" slot="start"></ion-icon>
-        Ajouter
-      </ion-button>
-      <ion-button color="tertiary" (click)="goToListe()">
-        <ion-icon name="list-outline" slot="start"></ion-icon>
-        Liste
-      </ion-button>
+      <ion-button (click)="goToAddVache()">Ajouter</ion-button>
+      <ion-button (click)="goToListe()">Liste</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

@@ -13,3 +13,24 @@
 
 /* dark mode */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+ion-footer {
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.08);
+  background: #f1f8e9;
+}
+
+ion-footer ion-toolbar {
+  display: flex;
+  justify-content: space-between;
+  --background: #f1f8e9;
+}
+
+ion-footer ion-button {
+  font-weight: 600;
+  color: #2e7d32;
+  transition: color 0.2s ease;
+}
+
+ion-footer ion-button:hover {
+  color: #43a047;
+}
