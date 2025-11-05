@@ -46,20 +46,3 @@ ion-content {
     }
   }
 }
-
-ion-footer ion-toolbar {
-  --background: #f1f8e9;
-  box-shadow: 0 -3px 8px rgba(0,0,0,0.08);
-  display: flex;
-  justify-content: space-between;
-
-  ion-button {
-    font-weight: 600;
-    color: #2e7d32;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: #43a047;
-    }
-  }
-}
