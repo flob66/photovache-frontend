@@ -16,42 +16,17 @@
   </ion-item>
 
   <div class="pictures-container">
-    <span>
-      <ion-button (click)="takePhoto('photo_avant')">Avant</ion-button>
-      <ion-card *ngIf="vache.photo_avant">
-        <img [src]="vache.photo_avant" alt="Avant">
-        <ion-card-title>Avant</ion-card-title>
-        <ion-button color="danger" (click)="removePhoto('photo_avant')">Supprimer</ion-button>
-      </ion-card>
-    </span>
-    
-    <span>
-      <ion-button (click)="takePhoto('photo_arriere')">Arrière</ion-button>
-      <ion-card *ngIf="vache.photo_arriere">
-        <img [src]="vache.photo_arriere" alt="Arrière">
-        <ion-card-title>Arrière</ion-card-title>
-        <ion-button color="danger" (click)="removePhoto('photo_arriere')">Supprimer</ion-button>
-      </ion-card>
-    </span>
+    <span *ngFor="let side of photoSides">
+      <ion-button (click)="takePhoto(side)">
+        {{ side.replace('photo_', '').replace('_', ' ').toUpperCase() }}
+      </ion-button>
 
-    <span>
-      <ion-button (click)="takePhoto('photo_cote_gauche')">Côté gauche</ion-button>
-      <ion-card *ngIf="vache.photo_cote_gauche">
-        <img [src]="vache.photo_cote_gauche" alt="Côté gauche">
-        <ion-card-title>Côté gauche</ion-card-title>
-        <ion-button color="danger" (click)="removePhoto('photo_cote_gauche')">Supprimer</ion-button>
+      <ion-card *ngIf="vache[side]">
+        <img [src]="vache[side]" [alt]="side">
+        <ion-card-title>{{ side.replace('photo_', '').replace('_', ' ').toUpperCase() }}</ion-card-title>
+        <ion-button color="danger" (click)="removePhoto(side)">Supprimer</ion-button>
       </ion-card>
     </span>
-    
-    <span>
-      <ion-button (click)="takePhoto('photo_cote_droit')">Côté droit</ion-button>
-      <ion-card *ngIf="vache.photo_cote_droit">
-        <img [src]="vache.photo_cote_droit" alt="Côté droit">
-        <ion-card-title>Côté droit</ion-card-title>
-        <ion-button color="danger" (click)="removePhoto('photo_cote_droit')">Supprimer</ion-button>
-      </ion-card>
-    </span>
-    
   </div>
 
   <ion-button expand="full" class="save-btn" (click)="save()">Enregistrer Vache</ion-button>
@@ -59,12 +34,10 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="goToHome()">Home</ion-button>
-    </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button (click)="goToAddVache()">Ajouter</ion-button>
-      <ion-button (click)="goToListe()">Liste</ion-button>
+      <ion-button (click)="goToAddVache()"><img src="assets/svg/add.svg" alt="Voice Search" width="24" height="24"> </ion-button>
+      <ion-button (click)="goToHome()"><img src="assets/svg/home.svg" alt="Voice Search" width="24" height="24"></ion-button>
+      <ion-button (click)="goToListe()"><img src="assets/svg/list.svg" alt="Voice Search" width="24" height="24"></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

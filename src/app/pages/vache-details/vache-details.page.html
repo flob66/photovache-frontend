@@ -7,35 +7,51 @@
 <ion-content class="ion-padding" *ngIf="vache">
   <h2>{{vache.numero}} - {{vache.nom}}</h2>
 
-  <ion-card *ngIf="vache.photo_avant">
+  <ion-card *ngIf="vache.photo_avant" (click)="openPhoto(vache.photo_avant, 'Avant')">
     <img [src]="vache.photo_avant" alt="Avant">
     <ion-card-title>Avant</ion-card-title>
   </ion-card>
 
-  <ion-card *ngIf="vache.photo_arriere">
+  <ion-card *ngIf="vache.photo_arriere" (click)="openPhoto(vache.photo_arriere, 'Arrière')">
     <img [src]="vache.photo_arriere" alt="Arrière">
     <ion-card-title>Arrière</ion-card-title>
   </ion-card>
 
-  <ion-card *ngIf="vache.photo_cote_gauche">
+  <ion-card *ngIf="vache.photo_cote_gauche" (click)="openPhoto(vache.photo_cote_gauche, 'Côté gauche')">
     <img [src]="vache.photo_cote_gauche" alt="Côté gauche">
     <ion-card-title>Côté gauche</ion-card-title>
   </ion-card>
 
-  <ion-card *ngIf="vache.photo_cote_droit">
+  <ion-card *ngIf="vache.photo_cote_droit" (click)="openPhoto(vache.photo_cote_droit, 'Côté droit')">
     <img [src]="vache.photo_cote_droit" alt="Côté droit">
     <ion-card-title>Côté droit</ion-card-title>
   </ion-card>
+
+  <ion-modal [isOpen]="isPhotoModalOpen" (didDismiss)="closePhoto()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{ currentPhotoTitle }}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closePhoto()">Fermer</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content fullscreen>
+        <div class="photo-wrapper">
+          <img [src]="currentPhoto" class="zoomable" />
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="goToHome()">Home</ion-button>
-    </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button (click)="goToAddVache()">Ajouter</ion-button>
-      <ion-button (click)="goToListe()">Liste</ion-button>
+      <ion-button (click)="goToAddVache()"><img src="assets/svg/add.svg" alt="Add" width="24" height="24"></ion-button>
+      <ion-button (click)="goToHome()"><img src="assets/svg/home.svg" alt="Home" width="24" height="24"></ion-button>
+      <ion-button (click)="goToListe()"><img src="assets/svg/list.svg" alt="List" width="24" height="24"></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

@@ -12,10 +12,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class VacheDetailsPage implements OnInit {
   vache: any = null;
+  isPhotoModalOpen = false;
+  currentPhoto: string | null = null;
+  currentPhotoTitle: string = '';
+  zoomed = false;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-    
-  }
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -25,15 +27,30 @@ export class VacheDetailsPage implements OnInit {
     });
   }
 
-  goToHome() {
-    this.router.navigate(['/']);
+  onDoubleTap(event: TouchEvent) {
+    const img = event.target as HTMLImageElement;
+    if (!this.zoomed) {
+      img.style.transform = 'scale(2)';
+      this.zoomed = true;
+    } else {
+      img.style.transform = 'scale(1)';
+      this.zoomed = false;
+    }
   }
 
-  goToAddVache() {
-    this.router.navigate(['/edit-vache']);
+  openPhoto(photoUrl: string, title: string) {
+    this.currentPhoto = photoUrl;
+    this.currentPhotoTitle = title;
+    this.isPhotoModalOpen = true;
   }
 
-  goToListe() {
-    this.router.navigate(['/liste-vaches']);
+  closePhoto() {
+    this.isPhotoModalOpen = false;
+    this.currentPhoto = null;
+    this.currentPhotoTitle = '';
   }
+
+  goToHome() { this.router.navigate(['/']); }
+  goToAddVache() { this.router.navigate(['/edit-vache']); }
+  goToListe() { this.router.navigate(['/liste-vaches']); }
 }

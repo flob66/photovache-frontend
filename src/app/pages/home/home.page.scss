@@ -27,7 +27,7 @@ ion-card {
 }
 
 .hero-bg {
-  width: 120px;
+  width: 50%;
   opacity: 0.8;
   margin-bottom: 1rem;
 }
@@ -58,6 +58,7 @@ ion-card {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  color: white;
 }
 
 .action-card:hover {
@@ -73,4 +74,9 @@ ion-card {
 .list-card {
   background: linear-gradient(135deg, #c5e1a5, #aed581);
   color: white;
+}
+
+ion-header ion-toolbar{
+  height: 10vh;
+  display: flex;
 }

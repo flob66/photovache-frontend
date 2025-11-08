@@ -25,6 +25,13 @@ ion-footer ion-toolbar {
   --background: #f1f8e9;
 }
 
+ion-footer ion-toolbar ion-buttons {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  justify-content: space-around;
+}
+
 ion-footer ion-button {
   font-weight: 600;
   color: #2e7d32;
@@ -33,4 +40,14 @@ ion-footer ion-button {
 
 ion-footer ion-button:hover {
   color: #43a047;
+}
+
+ion-button img {
+  filter: invert(40%) sepia(70%) saturate(500%) hue-rotate(90deg);
+  transition: transform 0.2s ease;
+}
+
+ion-header ion-toolbar{
+  height: 10vh;
+  display: flex;
 }
